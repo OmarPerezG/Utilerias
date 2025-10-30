@@ -3,63 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Descargar programas</title>
+<title>Ayudas</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Gestor de Descargas</h1>
+<h1>Gestor de Ayudas</h1>
 
-<div class="search-container">
-  <div class="search-box">
-    <input type="text" id="search" placeholder="Buscar programa...">
-    <span class="search-icon">🔍</span>
-  </div>
+<!-- Botones de navegación -->
+<div class="nav-buttons">
+  <a href="aplicaciones.html"><button class="nav-btn">Aplicaciones</button></a>
+  <a href="index.html"><button class="nav-btn active">Ayudas</button></a>
 </div>
 
-<div class="table-container">
-  <table id="programsTable">
-    <thead>
-      <tr>
-        <th>Archivo</th>
-        <th>Acción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>UltraViewer</td>
-        <td><a href="downloads/UltraViewer_setup_6.6.124_en.exe" download><button class="btn">Descargar</button></a></td>
-      </tr>
-      <tr>
-        <td>Kaspersky Free</td>
-        <td><a href="downloads/kaspersky-free-21-21-7-384.exe" download><button class="btn">Descargar</button></a></td>
-      </tr>
-      <tr>
-        <td>Zoom</td>
-        <td><a href="downloads/zoom_amd64.deb" download><button class="btn">Descargar</button></a></td>
-      </tr>
-      <!-- Agrega más archivos duplicando la fila -->
-    </tbody>
-  </table>
+<!-- Contenedor de cards -->
+<div class="cards-container">
+  <div class="card" onclick="showCard('Manual de Usuario')">
+    <img src="images/manual.png" alt="Manual de Usuario">
+    <h3>Manual de Usuario</h3>
+  </div>
+  <div class="card" onclick="showCard('Guía de Instalación')">
+    <img src="images/guia.png" alt="Guía de Instalación">
+    <h3>Guía de Instalación</h3>
+  </div>
+  <div class="card" onclick="showCard('Preguntas Frecuentes')">
+    <img src="images/faqs.png" alt="Preguntas Frecuentes">
+    <h3>Preguntas Frecuentes</h3>
+  </div>
+  <!-- Más cards aquí -->
 </div>
 
 <script>
-  const searchInput = document.getElementById('search');
-  const table = document.getElementById('programsTable').getElementsByTagName('tbody')[0];
-
-  searchInput.addEventListener('keyup', function() {
-    const filter = this.value.toLowerCase();
-    const rows = table.getElementsByTagName('tr');
-
-    Array.from(rows).forEach(row => {
-      const cell = row.getElementsByTagName('td')[0];
-      if (cell.textContent.toLowerCase().includes(filter)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
-    });
-  });
+function showCard(title) {
+  alert("Has abierto la ayuda: " + title);
+}
 </script>
 
 </body>

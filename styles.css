@@ -10,6 +10,30 @@ h1 {
   font-size: 2.2em;
 }
 
+/* Botones de navegación */
+.nav-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.nav-btn {
+  padding: 10px 25px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 8px;
+  background: #1f7aea;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.nav-btn:hover {
+  background: #155cb0;
+  transform: scale(1.05);
+}
+.nav-btn.active {
+  background: #28a745;
+}
+
 /* Buscador */
 .search-container {
   max-width: 800px;
@@ -24,7 +48,7 @@ h1 {
 }
 #search {
   width: 100%;
-  padding: 12px 40px 12px 15px; /* espacio para el ícono */
+  padding: 12px 40px 12px 15px;
   border-radius: 25px;
   border: 1px solid #ccc;
   font-size: 1em;
@@ -43,14 +67,14 @@ h1 {
   transform: translateY(-50%);
   font-size: 1.2em;
   color: #888;
-  pointer-events: none; /* para que no bloquee escribir */
+  pointer-events: none;
   transition: color 0.3s;
 }
 #search:focus + .search-icon {
   color: #1f7aea;
 }
 
-/* Contenedor de la tabla */
+/* Tabla (Aplicaciones) */
 .table-container {
   max-width: 800px;
   margin: 0 auto;
@@ -59,8 +83,6 @@ h1 {
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
-
-/* Tabla */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -82,7 +104,7 @@ tbody tr:hover {
   background: #f0f6ff;
 }
 
-/* Botón */
+/* Botón de descarga */
 .btn {
   padding: 10px 18px;
   border: none;
@@ -98,9 +120,45 @@ tbody tr:hover {
   transform: scale(1.05);
 }
 
+/* Cards (Ayudas) */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 220px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 15px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+.card h3 {
+  font-size: 1.1em;
+  color: #1f7aea;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   th, td { padding: 12px; }
   h1 { font-size: 1.8em; }
   #search { max-width: 100%; }
+  .nav-btn { margin: 5px; width: 45%; }
+  .card { width: 45%; margin-bottom: 15px; }
 }
