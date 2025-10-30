@@ -18,24 +18,56 @@
 
 <!-- Contenedor de cards -->
 <div class="cards-container">
-  <div class="card" onclick="showCard('Manual de Usuario')">
+
+  <div class="card" onclick="openModal('modal1')">
     <img src="images/manual.png" alt="Manual de Usuario">
     <h3>Manual de Usuario</h3>
   </div>
-  <div class="card" onclick="showCard('Guía de Instalación')">
+
+  <div class="card" onclick="openModal('modal2')">
     <img src="images/guia.png" alt="Guía de Instalación">
     <h3>Guía de Instalación</h3>
   </div>
-  <div class="card" onclick="showCard('Preguntas Frecuentes')">
+
+  <div class="card" onclick="openModal('modal3')">
     <img src="images/faqs.png" alt="Preguntas Frecuentes">
     <h3>Preguntas Frecuentes</h3>
   </div>
-  <!-- Más cards aquí -->
+
+</div>
+
+<!-- Modales individuales -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h2>Manual de Usuario</h2>
+    <p>Aquí va el contenido detallado del manual de usuario.</p>
+    <button class="close-btn" onclick="closeModal('modal1')">CERRAR</button>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <h2>Guía de Instalación</h2>
+    <p>Aquí va la guía completa para la instalación de los programas.</p>
+    <button class="close-btn" onclick="closeModal('modal2')">CERRAR</button>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <h2>Preguntas Frecuentes</h2>
+    <p>Respuestas a las dudas más comunes de los usuarios.</p>
+    <button class="close-btn" onclick="closeModal('modal3')">CERRAR</button>
+  </div>
 </div>
 
 <script>
-function showCard(title) {
-  alert("Has abierto la ayuda: " + title);
+function openModal(id) {
+  document.getElementById(id).style.display = 'flex';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
 }
 </script>
 
