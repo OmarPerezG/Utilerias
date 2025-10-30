@@ -14,21 +14,40 @@ h1 {
 .search-container {
   max-width: 800px;
   margin: 0 auto 30px auto;
-  text-align: right;
+  text-align: center;
+}
+.search-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
 }
 #search {
   width: 100%;
-  max-width: 300px;
-  padding: 10px 15px;
-  border-radius: 8px;
+  padding: 12px 40px 12px 15px; /* espacio para el ícono */
+  border-radius: 25px;
   border: 1px solid #ccc;
   font-size: 1em;
-  transition: border 0.3s, box-shadow 0.3s;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 #search:focus {
   outline: none;
   border-color: #1f7aea;
-  box-shadow: 0 0 5px rgba(31,122,234,0.5);
+  box-shadow: 0 4px 10px rgba(31,122,234,0.3);
+}
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #888;
+  pointer-events: none; /* para que no bloquee escribir */
+  transition: color 0.3s;
+}
+#search:focus + .search-icon {
+  color: #1f7aea;
 }
 
 /* Contenedor de la tabla */
